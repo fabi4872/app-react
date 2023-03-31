@@ -1,16 +1,20 @@
 import { Typography } from '@mui/material';
-import { AuthBasicTextFields, AuthButton, AuthButtonContainer, AuthContainer, AuthFormContainer, AuthLink, AuthLinkContainer } from '../layout';
+import { AuthInput, AuthButton, AuthButtonContainer, AuthContainer, AuthFormContainer, AuthInputContainer, AuthLink, AuthLinkContainer } from '../layout';
 
 export const RegisterPage = () => {
   return (
     <AuthContainer>
       <AuthFormContainer>
-        <Typography sx={{ mb: 3 }} variant="h6">Crear una cuenta</Typography>
+        <Typography sx={{ mt: 1 }} variant="h6">Crear una cuenta</Typography>
 
-        <AuthBasicTextFields type="text" component="form" autoComplete="off" id="nombres" name="nombres" value="" label="Nombres" variant="outlined" placeholder="Nombres" />
-        <AuthBasicTextFields type="text" component="form" autoComplete="off" id="apellidos" name="apellidos" value="" label="Apellidos" variant="outlined" placeholder="Apellidos" />
-        <AuthBasicTextFields type="email" component="form" autoComplete="off" id="email" name="email" value="" label="Email" variant="outlined" placeholder="Email" />
-        <AuthBasicTextFields type="password" component="form" autoComplete="off" id="password" name="password" value="" label="Password" variant="outlined" placeholder="Password" />
+        <AuthInputContainer>
+          <AuthInput type="text" id="nombres" name="nombres" value="" label="Nombres" variant="outlined" placeholder="Nombres" autoComplete="off" xs={ 12 } md={ 12 } />
+          <AuthInput type="text" id="apellidos" name="apellidos" value="" label="Apellidos" variant="outlined" placeholder="Apellidos" autoComplete="off" xs={ 12 } md={ 12 } />
+          <AuthInput type="email" id="email" name="email" value="" label="Email" variant="outlined" placeholder="Email" autoComplete="off" xs={ 12 } md={ 6 } />
+          <AuthInput type="email" id="repeticion-email" name="repeticion-email" value="" label="Repetición email" variant="outlined" placeholder="Repeticion email" autoComplete="off" xs={ 12 } md={ 6 } />
+          <AuthInput type="password" id="password" name="password" value="" label="Password" variant="outlined" placeholder="Password" autoComplete="off" xs={ 12 } md={ 6 } />
+          <AuthInput type="password" id="repeticion-password" name="repeticion-password" value="" label="Repetición password" variant="outlined" placeholder="Repetición password" autoComplete="off" xs={ 12 } md={ 6 } />
+        </AuthInputContainer>
 
         <AuthButtonContainer>
           <AuthButton variant="contained" nombre="Crear cuenta" color="success" onClick={ () => {} } xs={ 12 } md= { 12 } /> 

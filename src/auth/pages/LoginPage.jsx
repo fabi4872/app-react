@@ -1,15 +1,17 @@
 import { Google } from '@mui/icons-material';
 import { Typography } from '@mui/material';
-import { AuthBasicTextFields, AuthButton, AuthButtonContainer, AuthContainer, AuthFormContainer, AuthLink, AuthLinkContainer } from '../layout';
+import { AuthInput, AuthButton, AuthButtonContainer, AuthContainer, AuthFormContainer, AuthInputContainer, AuthLink, AuthLinkContainer } from '../layout';
 
 export const LoginPage = () => {
   return (
     <AuthContainer>
       <AuthFormContainer>
-        <Typography sx={{ mb: 3 }} variant="h6">Iniciar sesión</Typography>
+        <Typography sx={{ mt: 1 }} variant="h6">Iniciar sesión</Typography>
 
-        <AuthBasicTextFields type="email" component="form" autoComplete="off" id="email" name="email" value="" label="Email" variant="outlined" placeholder="Email" />
-        <AuthBasicTextFields type="password" component="form" autoComplete="off" id="password" name="password" value="" label="Password" variant="outlined" placeholder="Password" />
+        <AuthInputContainer>
+          <AuthInput type="email" id="email" name="email" value="" label="Email" variant="outlined" placeholder="Email" autoComplete="off" xs={ 12 } md={ 12 } />
+          <AuthInput type="password" id="password" name="password" value="" label="Password" variant="outlined" placeholder="Password" autoComplete="off" xs={ 12 } md={ 12 } />
+        </AuthInputContainer>
 
         <AuthButtonContainer>
           <AuthButton variant="contained" nombre="Google" color="error" onClick={ () => {} } xs={ 12 } md= { 6 } >
