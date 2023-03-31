@@ -1,16 +1,30 @@
+import { useEffect } from 'react';
+import { useForm } from '../../hooks';
 import { Google } from '@mui/icons-material';
 import { Typography } from '@mui/material';
 import { AuthInput, AuthButton, AuthButtonContainer, AuthContainer, AuthFormContainer, AuthInputContainer, AuthLink, AuthLinkContainer } from '../layout';
 
 export const LoginPage = () => {
+
+  const { email, password, onChangeForm } = useForm({
+    email: '',
+    password: ''
+  });
+
+  useEffect(() => {  
+    return () => {
+      
+    }
+  }, []);
+
   return (
     <AuthContainer>
       <AuthFormContainer>
         <Typography sx={{ mt: 1 }} variant="h6">Iniciar sesión</Typography>
 
         <AuthInputContainer>
-          <AuthInput type="email" id="email" name="email" value="" label="Email" variant="outlined" placeholder="Email" autoComplete="off" xs={ 12 } md={ 12 } />
-          <AuthInput type="password" id="password" name="password" value="" label="Password" variant="outlined" placeholder="Password" autoComplete="off" xs={ 12 } md={ 12 } />
+          <AuthInput type="email" id="email" name="email" value={ email } label="Email" variant="outlined" placeholder="Email" autoComplete="off" xs={ 12 } md={ 12 } onChangeForm={ onChangeForm } />
+          <AuthInput type="password" id="password" name="password" value={ password } label="Password" variant="outlined" placeholder="Password" autoComplete="off" xs={ 12 } md={ 12 } onChangeForm={ onChangeForm } />
         </AuthInputContainer>
 
         <AuthButtonContainer>
