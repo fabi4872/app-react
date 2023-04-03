@@ -14,3 +14,16 @@
     color: blue;
     font-weight: bold;
 }
+
+.app-icon-dashboard{
+    color: #4A1292 !important;
+}
+
+.app-button-dashboard{
+    margin: 1rem 0.5rem !important;
+    border-radius: 0.5rem !important;
+}
+
+.app-button-dashboard:hover{
+    background-color: #EDE7F6 !important;
+}
