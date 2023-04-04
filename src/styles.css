@@ -28,9 +28,28 @@
     background-color: #EDE7F6 !important;
 }
 
+.app-icon-cerrar-sesion{
+    color: white !important;
+}
+
+.app-button-cerrar-sesion{
+    font-weight: bold !important;
+    color: white !important;
+    background-color: #6600cc !important;
+    margin-top: 0rem !important;
+}
+
+.app-button-cerrar-sesion:hover{
+    background-color: #4d0199 !important;
+}
+
+.sidebar-dashboard{
+    box-shadow: none !important;
+}
+
 .css-hyum1k-MuiToolbar-root{
     height: 4rem !important;
-    padding: 1.5rem !important;
+    padding: 0 1.5rem !important;
     width: 100% !important;
 }
 

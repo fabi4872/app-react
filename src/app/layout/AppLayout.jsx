@@ -7,7 +7,7 @@ export const AppLayout = ({ children }) => {
   return (
     <Box sx={{ display: "flex" }}>
           
-      <Navbar drawerWidth={ drawerWidth } />
+      {/* <Navbar drawerWidth={ drawerWidth } /> */}
 
       <Sidebar drawerWidth={ drawerWidth } />
 

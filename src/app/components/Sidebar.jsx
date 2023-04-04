@@ -21,6 +21,7 @@ import BallotIcon from '@mui/icons-material/Ballot';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { Grid } from '@mui/material';
+import { LogoutOutlined } from '@mui/icons-material';
 
 const drawerWidth = 240;
 
@@ -130,27 +131,34 @@ export const Sidebar = ({ drawerWidth = 240 }) => {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <AppBar position="fixed" open={open}>
+    <Box sx={{ display: "flex" }}>
+      <AppBar className="sidebar-dashboard" position="fixed" open={open}>
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: 5,
-              ...(open && { display: 'none' }),
-            }}
+          <Grid 
+            container
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            TUTI
-          </Typography>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{
+                marginRight: 5,
+                ...(open && { display: 'none' }),
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" noWrap component="div" sx={{ color: "orange", letterSpacing: "0.3rem", fontSize: "1.7rem", fontWeight: "bold" }}>
+              TUTI
+            </Typography>
+          </Grid>
         </Toolbar>
       </AppBar>
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={open} sx={{ height: "100%" }}>
         <DrawerHeader>
           <Grid
             container
@@ -165,6 +173,7 @@ export const Sidebar = ({ drawerWidth = 240 }) => {
           </Grid>
         </DrawerHeader>
         <Divider />
+        
         <List>
           {listComponents.map(( item ) => (
             <ListItem key={ item.indice } disablePadding sx={{ display: 'block' }}>
@@ -191,6 +200,32 @@ export const Sidebar = ({ drawerWidth = 240 }) => {
               </ListItemButton>
             </ListItem>
           ))}
+        </List>
+
+        <List>
+          <ListItem key={ 6 } disablePadding sx={{ display: 'block' }}>
+            <ListItemButton
+              className="app-button-dashboard app-button-cerrar-sesion"
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? 'initial' : 'center',
+                px: 2.5,
+                mt: 2
+              }}
+            >
+              <ListItemIcon
+                className="app-icon-cerrar-sesion"
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : 'auto',
+                  justifyContent: 'center',
+                }}
+              >
+                <LogoutOutlined />
+              </ListItemIcon>
+              <ListItemText primary="Cerrar sesión" sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
         </List>
       </Drawer>
     </Box>
